@@ -1,0 +1,15 @@
+<%@page import="muskycode.dto.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%-- 비로그인 사용자에 대해 에러페이지(error400.jsp)로 이동하는 JSPF 파일 --%> 
+<%
+	//세션에 저장된 권한 관련 정보를 반환받아 저장
+	MemberDTO loginMember=(MemberDTO)session.getAttribute("loginMember");
+
+	if(loginMember==null) {//비로그인 사용자인 경우
+		out.println("<script type='text/javascript'>");
+		out.println("location.href='"+request.getContextPath()+"/muskycode/index.jsp?muskygroup=error&musky=error400';");
+		out.println("</script>");
+		return;
+	}
+%> 

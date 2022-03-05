@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="Http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>jsp</display-name>
+  
+  <!-- error-page : 서버에서 발생된 에러에 대한 메세지를 제공하기 위한 웹프로그램을 설정하는 부모 엘리먼트  -->
+  <error-page>
+  	<!-- exception-type : 웹프로그램 실행시 발생된 예외에 대한 예외클래스를 설정하는 엘리먼트  -->
+  	<exception-type>java.lang.NullPointerException</exception-type>
+  	<!-- location : 에러 메세지를 제공하기 위한 웹프로그램의 URL 주소를 설정하는 엘리먼트 -->
+  	<location>/error/error_null.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<!-- error-code : 클라이언트에서 전달되는 상태코드(에러코드 : 4XX or 5XX)를 설정하는 엘리먼트 -->
+  	<error-code>500</error-code>
+  	<location>/error/error_500.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>400</error-code>
+  	<location>/error/error_400.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>403</error-code>
+  	<location>/error/error_403.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/error_404.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>405</error-code>
+  	<location>/error/error_405.jsp</location>
+  </error-page>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
